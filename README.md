@@ -16,4 +16,4 @@
 
 * Media Queries
 
-[Перейти к проекту]()
+[Перейти к проекту](https://sparcog.github.io/mesto-project/)
