@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="Интерестные места для путешествий по России">
+  <meta name="keywords" content="Карачаевск, Гора Эльбрус, Домбай, Карачаево-Черкессия, путешествия по России">
+  <meta name="author" content="Игорь Сташок">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto Russia</title>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <img src="./images/logo/logo.svg" alt="Mesto Russia" class="logo">
+      <div class="header__line"></div>
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__avatar"></div>
+        <div class="profile__info">
+          <div class="profile__container">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <p class="profile__paragraph">Исследователь океана</p>
+            <form class="profile__form-edit-button">
+              <fieldset class="profile__form-container">
+                <label>
+                  <input type="submit" class="hide-button">
+                  <span class="profile__pseudo-edit-button"></span>
+                </label>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <form>
+          <fieldset class="profile__form-container">
+            <label>
+              <input type="submit" class="hide-button">
+              <span class="profile__pseudo-add-button"></span>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+      <section class="gallery">
+        <div>
+          <img src="./images/kraczevsk.jpg" alt="Заброшенное здание на фоне подножья горы" class="gallery__image">
+          <div class="gallery__background">
+            <h2 class="gallery__title">Карачаевск</h2>
+            <div class="gallery__like-heart"></div>
+          </div>
+        </div>
+        <div>
+          <img src="./images/gora-elbrus.jpg" alt="Мягкий закат солнца и вдалеке в дымке видно верхушку горы" class="gallery__image">
+          <div class="gallery__background">
+            <h2 class="gallery__title">Гора Эльбрус</h2>
+            <div class="gallery__like-heart"></div>
+          </div>
+        </div>
+        <div>
+          <img src="./images/dombaj.jpg" alt="На фоне снежной горы с острой верхушкой, видно зеленый лес" class="gallery__image">
+          <div class="gallery__background">
+            <h2 class="gallery__title">Домбай</h2>
+            <div class="gallery__like-heart"></div>
+          </div>
+        </div>
+        <div>
+          <img src="./images/gora-elbrus.jpg" alt="Мягкий закат солнца и вдалеке в дымке видно верхушку горы" class="gallery__image">
+          <div class="gallery__background">
+            <h2 class="gallery__title">Гора Эльбрус</h2>
+            <div class="gallery__like-heart"></div>
+          </div>
+        </div>
+        <div>
+          <img src="./images/dombaj.jpg" alt="На фоне снежной горы с острой верхушкой, видно зеленый лес" class="gallery__image">
+          <div class="gallery__background">
+            <h2 class="gallery__title">Домбай</h2>
+            <div class="gallery__like-heart"></div>
+          </div>
+        </div>
+        <div>
+          <img src="./images/kraczevsk.jpg" alt="Заброшенное здание на фоне подножья горы" class="gallery__image">
+          <div class="gallery__background">
+            <h2 class="gallery__title gallery__title_hidden_title">Карачаево-Черкессия</h2>
+            <h2 class="gallery__title gallery__title_hidden_pseudo-title">Карачаевск</h2>
+            <div class="gallery__like-heart"></div>
+          </div>
+        </div>
+      </section>
+      <section class="popap"> <!--popup_opened-->
+        <form class="popap__form">
+          <div class="poppap__form-container">
+            <h2 class="popap__title">Редактировать профиль</h2>
+            <div class="popap__container">
+              <fieldset class="popap__input-container">
+                <input type="text" name="name" class="popap__item" required>
+                <input type="text" name="profession" class="popap__item" required>
+              </fieldset>
+              <fieldset class="popap__handler">
+                <label>
+                  <input type="submit" class="hide-button">
+                  <span class="popap__pseudo-save-button">Сохранить</span>
+                </label>
+              </fieldset>
+            </div>
+          </div>
+          <fieldset class="popap__close-input-container">
+            <label>
+              <input type="submit" class="hide-button">
+              <span class="popap__close"></span>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+  </div>
+</body>
+</html>

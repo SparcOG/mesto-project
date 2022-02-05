@@ -1,0 +1,14 @@
+.poppap__form-container {
+  width: 430px;
+  height: 330px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.150);
+}
+
+@media screen and (max-width: 500px) {
+  .poppap__form-container  {
+    width: 282px;
+    height: 322px;
+  }
+}

@@ -1,0 +1,19 @@
+.popap__close {
+  display: block;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background-image: url(/images/icons/close-icon.svg);
+}
+
+.popap__close:hover {
+  opacity: .6;
+}
+
+@media screen and (max-width: 500px) {
+  .popap__close  {
+    width: 20px;
+    height: 20px;
+    background-image: url(/images/icons/close-icon-small.svg);
+  }
+}

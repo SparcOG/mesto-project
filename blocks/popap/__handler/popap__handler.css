@@ -1,0 +1,11 @@
+.popap__handler {
+  border: 0;
+  padding: 0;
+  margin: 48px 0 0 0;
+}
+
+@media screen and (max-width: 500px) {
+  .popap__handler  {
+    margin: 45px 0 0 0;
+  }
+}

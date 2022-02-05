@@ -1,0 +1,20 @@
+.profile__pseudo-edit-button {
+  display: block;
+  cursor: pointer;
+  background-image: url(/images/icons/edit-button.svg);
+  width: 24px;
+  height: 24px;
+}
+
+.profile__pseudo-edit-button:hover {
+  opacity: .6;
+}
+
+@media screen and (max-width: 387px) {
+  .profile__pseudo-edit-button {
+    background-image: url(/images/icons/edit-button-small.svg);
+    width: 18px;
+    height: 18px;
+  }
+}
+

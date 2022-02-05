@@ -1,0 +1,13 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 282px);
+  justify-content: center;
+  grid-gap: 20px 17px;
+  padding: 47px 0 0 0;
+}
+
+@media screen and (max-width: 387px) {
+  .gallery  {
+    padding: 36px 0 0 0;
+  }
+}
