@@ -3,7 +3,7 @@
   cursor: pointer;
   width: 32px;
   height: 32px;
-  background-image: url(/images/icons/close-icon.svg);
+  background-image: url(../../../images/icons/close-icon.svg);
 }
 
 .popap__close:hover {
@@ -14,6 +14,6 @@
   .popap__close  {
     width: 20px;
     height: 20px;
-    background-image: url(/images/icons/close-icon-small.svg);
+    background-image: url(../../../images/icons/close-icon-small.svg);
   }
 }
