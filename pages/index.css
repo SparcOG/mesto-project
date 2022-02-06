@@ -45,7 +45,7 @@ block content*/
 /*
 
 block gallery*/
-@import url(/blocks/gallery/gallery.css);
+@import url(../blocks/gallery/gallery.css);
 /*elements*/
 @import url(../blocks/gallery/__background/gallery__background.css);
 @import url(../blocks/gallery/__image/gallery__image.css);
