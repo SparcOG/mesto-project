@@ -10,7 +10,6 @@
 @media screen and (max-width: 500px) {
   .popap__title  {
     font-size: 18px;
-    font-weight: 900;
     line-height: 22px;
     padding: 25px 0 75px 0;
     text-align: center;
