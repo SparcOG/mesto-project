@@ -1,9 +1,12 @@
 .gallery__like-heart {
   cursor: pointer;
   background-image: url(../../../images/icons/heart.svg);
+  background-color: #fff;
   width: 22px;
   height: 19px;
   margin: 0 30px 0 0;
+  padding: 0;
+  border: 0;
 }
 
 .gallery__like-heart:hover {
