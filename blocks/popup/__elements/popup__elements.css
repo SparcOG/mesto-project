@@ -1,0 +1,4 @@
+.popup__elements {
+  display: grid;
+  justify-items: center;
+}

@@ -1,4 +1,4 @@
 .popup__container {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  position: relative;
 }
