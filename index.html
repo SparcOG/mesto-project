@@ -74,7 +74,7 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup"> <!--popup_opened-->
+    <div class="popup popup_opened"> <!--popup_opened-->
       <form class="popup__container">
         <div class="popup__form">
           <h2 class="popup__title">Редактировать профиль</h2>
@@ -91,12 +91,7 @@
             </fieldset>
           </div>
         </div>
-        <fieldset class="popup__close-input-container">
-          <label>
-            <input type="submit" class="popup__hide-button">
-            <span class="popup__close"></span>
-          </label>
-        </fieldset>
+        <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       </form>
     </div>
   </div>
