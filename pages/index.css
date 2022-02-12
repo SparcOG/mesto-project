@@ -49,22 +49,22 @@ block gallery*/
 
 /*gi
 
-block popap*/
-@import url(../blocks/popap/popap.css);
+block popup*/
+@import url(../blocks/popup/popup.css);
 /*elements*/
-@import url(../blocks/popap/__hide-button/popap__hide-button.css);
-@import url(../blocks/popap/__close-input-container/popap__close-input-container.css);
-@import url(../blocks/popap/__close/popap__close.css);
-@import url(../blocks/popap/__container/popap__container.css);
-@import url(../blocks/popap/__form-container/poppap__form-container.css);
-@import url(../blocks/popap/__form/popap__form.css);
-@import url(../blocks/popap/__handler/popap__handler.css);
-@import url(../blocks/popap/__input-container/popap__input-container.css);
-@import url(../blocks/popap/__item/popap__item.css);
-@import url(../blocks/popap/__pseudo-save-button/popap__pseudo-save-button.css);
-@import url(../blocks/popap/__title/popap__title.css);
+@import url(../blocks/popup/__hide-button/popup__hide-button.css);
+@import url(../blocks/popup/__close-input-container/popup__close-input-container.css);
+@import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__form-container/popup__form-container.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__handler/popup__handler.css);
+@import url(../blocks/popup/__input-container/popup__input-container.css);
+@import url(../blocks/popup/__item/popup__item.css);
+@import url(../blocks/popup/__pseudo-save-button/popup__pseudo-save-button.css);
+@import url(../blocks/popup/__title/popup__title.css);
 /*modifiers*/
-@import url(../blocks/popap/_opened/popup_opened.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
 
 /*
 

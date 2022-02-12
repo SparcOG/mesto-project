@@ -1,4 +1,4 @@
-.popap__pseudo-save-button {
+.popup__pseudo-save-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,12 +12,12 @@
   background-color: #000;
 }
 
-.popap__pseudo-save-button:hover {
+.popup__pseudo-save-button:hover {
   opacity: .8;
 }
 
 @media screen and (max-width: 500px) {
-  .popap__pseudo-save-button  {
+  .popup__pseudo-save-button  {
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;

@@ -1,4 +1,4 @@
-.poppap__form-container {
+.popup__form-container {
   width: 430px;
   border-radius: 10px;
   background-color: #fff;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .poppap__form-container  {
+  .popup__form-container  {
     width: 282px;
   }
 }

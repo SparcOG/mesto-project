@@ -1,4 +1,4 @@
-.popap__close {
+.popup__close {
   display: block;
   cursor: pointer;
   width: 32px;
@@ -6,12 +6,12 @@
   background-image: url(../../../images/icons/close-icon.svg);
 }
 
-.popap__close:hover {
+.popup__close:hover {
   opacity: .6;
 }
 
 @media screen and (max-width: 500px) {
-  .popap__close  {
+  .popup__close  {
     width: 20px;
     height: 20px;
     background-image: url(../../../images/icons/close-icon-small.svg);

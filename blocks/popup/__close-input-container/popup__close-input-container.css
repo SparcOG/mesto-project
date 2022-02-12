@@ -1,4 +1,4 @@
-.popap__close-input-container {
+.popup__close-input-container {
   border: 0;
   padding: 0;
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .popap__close-input-container  {
+  .popup__close-input-container  {
     position: absolute;
     bottom: calc(100% + 16px);
     left: calc(100% - 20px);
