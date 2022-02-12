@@ -20,26 +20,12 @@
         <div class="profile__avatar"></div>
         <div class="profile__info">
           <div class="profile__container">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <p class="profile__paragraph">Исследователь океана</p>
-            <form class="profile__form-edit-button">
-              <fieldset class="profile__form-container">
-                <label>
-                  <input type="submit" class="hide-button">
-                  <span class="profile__pseudo-edit-button"></span>
-                </label>
-              </fieldset>
-            </form>
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <p class="profile__paragraph">Исследователь океана</p>
+            <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
           </div>
         </div>
-        <form>
-          <fieldset class="profile__form-container">
-            <label>
-              <input type="submit" class="hide-button">
-              <span class="profile__pseudo-add-button"></span>
-            </label>
-          </fieldset>
-        </form>
+        <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
       <section class="gallery">
         <div>
@@ -96,7 +82,7 @@
               </fieldset>
               <fieldset class="popap__handler">
                 <label>
-                  <input type="submit" class="hide-button">
+                  <input type="submit" class="popap__hide-button">
                   <span class="popap__pseudo-save-button">Сохранить</span>
                 </label>
               </fieldset>
@@ -104,7 +90,7 @@
           </div>
           <fieldset class="popap__close-input-container">
             <label>
-              <input type="submit" class="hide-button">
+              <input type="submit" class="popap__hide-button">
               <span class="popap__close"></span>
             </label>
           </fieldset>

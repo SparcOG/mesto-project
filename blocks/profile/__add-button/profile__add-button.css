@@ -1,17 +1,19 @@
-.profile__pseudo-add-button {
-  display: block;
-  cursor: pointer;
+.profile__add-button {
   background-image: url(../../../images/icons/add-button.svg);
+  cursor: pointer;
   width: 150px;
   height: 50px;
+  background-color: #000;
+  padding: 0;
+  border: 0;
 }
 
-.profile__pseudo-add-button:hover {
+.profile__add-button:hover {
   opacity: .6;
 }
 
 @media screen and (max-width: 663px) {
-  .profile__pseudo-add-button {
+  .profile__add-button {
     background-image: url(../../../images/icons/big-add-button.svg);
     width: 282px;
     margin: 36px 0 0 0;

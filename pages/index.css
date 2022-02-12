@@ -25,17 +25,11 @@ block profile*/
 /*elements*/
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__container/profile__container.css);
-@import url(../blocks/profile/__form-container/profile__form-container.css);
-@import url(../blocks/profile/__form-edit-button/profile__form-edit-button.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__paragraph/profile__paragraph.css);
-@import url(../blocks/profile/__pseudo-add-button/profile__pseudo-add-button.css);
-@import url(../blocks/profile/__pseudo-edit-button/profile__pseudo-edit-button.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__title/profile__title.css);
-/*
-
-block hide-button*/
-@import url(../blocks/hide-button/hide-button.css);
 
 /*
 
@@ -58,6 +52,7 @@ block gallery*/
 block popap*/
 @import url(../blocks/popap/popap.css);
 /*elements*/
+@import url(../blocks/popap/__hide-button/popap__hide-button.css);
 @import url(../blocks/popap/__close-input-container/popap__close-input-container.css);
 @import url(../blocks/popap/__close/popap__close.css);
 @import url(../blocks/popap/__container/popap__container.css);
