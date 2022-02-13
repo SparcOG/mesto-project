@@ -4,6 +4,7 @@
   height: 32px;
   background-image: url(../../../images/icons/close-icon.svg);
   background-color: transparent;
+  transition: opacity .3s;
   border: 0;
   padding: 0;
   position: relative;

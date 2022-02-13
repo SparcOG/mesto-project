@@ -4,6 +4,7 @@
   align-self: center;
   margin: 0 0 0 18px;
   background-image: url(../../../images/icons/edit-button.svg);
+  transition: opacity .3s;
   cursor: pointer;
   width: 24px;
   height: 24px;

@@ -4,7 +4,7 @@
   margin: 0 0 0 30px;
 }
 
-@media screen and (max-width: 663px) {
+@media screen and (max-width: 387px) {
   .profile__container {
     margin-top: 22px;
   }

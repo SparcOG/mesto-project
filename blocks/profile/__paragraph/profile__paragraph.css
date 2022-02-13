@@ -4,12 +4,10 @@
   line-height: 22px;
   grid-row: 2;
   margin: 16px 0 0 0;
-}
-
-@media screen and (max-width: 661px) {
-  .profile__paragraph {
-    text-align: center;
-  }
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 500px;
 }
 
 @media screen and (max-width: 500px) {
@@ -17,6 +15,13 @@
     font-size: 14px;
     line-height: 17px;
     margin: 14px 0 0 0;
+  }
+}
+
+
+@media screen and (max-width: 387px) {
+  .profile__paragraph {
+    text-align: center;
   }
 }
 

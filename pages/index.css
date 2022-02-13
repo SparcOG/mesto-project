@@ -52,6 +52,7 @@ block popup*/
 @import url(../blocks/popup/popup.css);
 /*elements*/
 @import url(../blocks/popup/__close-button/popup__close-button.css);
+@import url(../blocks/popup/__handler-button/popup__handler-button.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__elements/popup__elements.css);
 @import url(../blocks/popup/__form/popup__form.css);
