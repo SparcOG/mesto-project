@@ -21,6 +21,7 @@ block header*/
 block profile*/
 @import url(../blocks/profile/profile.css);
 /*elements*/
+@import url(../blocks/profile/__space/profile__space.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__container/profile__container.css);
 @import url(../blocks/profile/__info/profile__info.css);
