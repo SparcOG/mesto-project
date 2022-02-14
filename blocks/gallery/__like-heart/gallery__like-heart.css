@@ -2,7 +2,7 @@
   cursor: pointer;
   background-image: url(../../../images/icons/heart.svg);
   transition: opacity .3s;
-  background-color: #fff;
+  background-color: transparent;
   width: 22px;
   height: 19px;
   margin: 0 30px 0 0;
