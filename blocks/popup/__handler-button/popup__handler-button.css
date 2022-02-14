@@ -10,6 +10,7 @@
   height: 50px;
   color: #fff;
   background-color: #000;
+  border-radius: 2px;
   transition: opacity .3s;
   border: 0;
   padding: 0;
