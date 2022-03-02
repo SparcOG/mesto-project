@@ -1,4 +1,4 @@
-.popup__item {
+.popup__item-profession {
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
@@ -14,12 +14,12 @@
   overflow: hidden;
 }
 
-.popup__item:nth-child(1) {
+.popup__item-profession:nth-child(1) {
   margin: 0;
 }
 
 @media screen and (max-width: 500px) {
-  .popup__item  {
+  .popup__item-profession  {
     width: 238px;
   }
 }
