@@ -18,24 +18,24 @@ function hidePopup() {
 editButton.addEventListener('click', hidePopup);
 closeButton.addEventListener('click', showPopup);
 
-//Функция замены текста
+//Функция замены текст
+
  function addProfile () {
 
   let popupItemName = document.querySelector('.popup__item-name');
   let popupItemProfession = document.querySelector('.popup__item-profession');
-
-
-
 
   profile.insertAdjacentHTML('afterbegin', `
     <h1 class="profile__title">${popupItemName.value}</h1>
     <p class="profile__paragraph">${popupItemProfession.value}</p>
   `);
 
-  popupItemName.value = popupItemName + popupItemName.value;
-  popupItemProfession.value = popupItemName + popupItemName.value;
+  popupItemName.value = '';
+  popupItemProfession.value = '';
 
-  showPopup()
+  popupСlose.classList.remove('popup_opened');
 }
 
 primer.addEventListener('click', addProfile);
+
+
