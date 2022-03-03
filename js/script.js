@@ -1,17 +1,35 @@
 //Открытие и закрытие попапа, а также очиска формы при закрытии
+let popupСlose = document.querySelector('.popup');
+let editButton = document.querySelector('.profile__edit-button');
+let closeButton = document.querySelector('.popup__close-button');
 
-let popupСlose = document.querySelector('.profile__edit-button');
+let profile = document.querySelector('.profile__container');
 
-function hidePopup() {
-    if (true) {
-  popupСlose.classList.add('popup_opened');
-    } else {
-      popupСlose.classList.remove('popup_opened');
-    };
+function showPopup() {
+  popupСlose.classList.remove('popup_opened');
 }
 
-popupСlose.addEventListener('click', hidePopup);
+function hidePopup() {
+  popupСlose.classList.add('popup_opened');
+}
 
+editButton.addEventListener('click', hidePopup);
+closeButton.addEventListener('click', showPopup);
 
+//Функция замены текста
+ function addProfile () {
 
+  let popupItemName = document.querySelector('.popup__item-name');
+  let popupItemProfession = document.querySelector('.popup__item-profession');
 
+  profile.insertAdjacentHTML('afterbegin', `
+    <h1 class="profile__title">${popupItemName.value}</h1>
+    <p class="profile__paragraph">${popupItemProfession.value}</p>
+  `);
+
+  popupItemName.value = 'Жак-Ив Кусто';
+  popupItemProfession.value = 'Исследователь океана';
+
+}
+
+addProfile ();
