@@ -5,7 +5,8 @@ let closeButton = document.querySelector('.popup__close-button');
 
 let primer = document.querySelector('.popup__handler-button');
 
-let profile = document.querySelector('.profile__container');
+let profileTitle = document.querySelector('.profile__title');
+let profileParagraph = document.querySelector('.paragraph');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
@@ -25,10 +26,10 @@ closeButton.addEventListener('click', showPopup);
   let popupItemName = document.querySelector('.popup__item-name');
   let popupItemProfession = document.querySelector('.popup__item-profession');
 
-  profile.insertAdjacentHTML('afterbegin', `
+  profileTitle.innerHTML = `
     <h1 class="profile__title">${popupItemName.value}</h1>
-    <p class="profile__paragraph">${popupItemProfession.value}</p>
-  `);
+  `;
+
 
   popupItemName.value = '';
   popupItemProfession.value = '';
@@ -37,5 +38,6 @@ closeButton.addEventListener('click', showPopup);
 }
 
 primer.addEventListener('click', addProfile);
+
 
 
