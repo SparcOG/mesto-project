@@ -26,9 +26,8 @@ closeButton.addEventListener('click', showPopup);
   let popupItemName = document.querySelector('.popup__item-name');
   let popupItemProfession = document.querySelector('.popup__item-profession');
 
-  profileTitle.innerHTML = `
-    <h1 class="profile__title">${popupItemName.value}</h1>
-  `;
+  profileTitle.textContent = popupItemName.value;
+  profileParagraph.textContent = popupItemProfession.value;
 
 
   popupItemName.value = '';
