@@ -2,11 +2,9 @@
 let popupСlose = document.querySelector('.popup');
 let editButton = document.querySelector('.profile__edit-button');
 let closeButton = document.querySelector('.popup__close-button');
+let popupHandlerButton = document.querySelector('.popup__handler-button');
 
-let primer = document.querySelector('.popup__handler-button');
-
-let profileTitle = document.querySelector('.profile__title');
-let profileParagraph = document.querySelector('.paragraph');
+let profileTitle = document.querySelector('.profile__container');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
@@ -26,9 +24,11 @@ closeButton.addEventListener('click', showPopup);
   let popupItemName = document.querySelector('.popup__item-name');
   let popupItemProfession = document.querySelector('.popup__item-profession');
 
-  profileTitle.textContent = popupItemName.value;
-  profileParagraph.textContent = popupItemProfession.value;
-
+  profileTitle.innerHTML = `
+    <h1 class="profile__title">${popupItemName.value}</h1>
+    <p class="profile__paragraph">${popupItemProfession.value}</p>
+    <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
+  `;
 
   popupItemName.value = '';
   popupItemProfession.value = '';
@@ -36,7 +36,4 @@ closeButton.addEventListener('click', showPopup);
   popupСlose.classList.remove('popup_opened');
 }
 
-primer.addEventListener('click', addProfile);
-
-
-
+popupHandlerButton.addEventListener('click', addProfile);
