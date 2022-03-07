@@ -4,7 +4,7 @@ let editButton = document.querySelector('.profile__edit-button');
 let closeButton = document.querySelector('.popup__close-button');
 let popupHandlerButton = document.querySelector('.popup__handler-button');
 
-let profileTitle = document.querySelector('.profile__container');
+let profileContainer = document.querySelector('.profile__container');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
@@ -20,15 +20,19 @@ closeButton.addEventListener('click', showPopup);
 //Функция замены текст
 
  function addProfile () {
+  const profileTitle = document.createElement('h1');
+    profileTitle.classList.add('profile__title');
+    profileTitle.textContent = popupItemName.value;
+  const profileParagraph = document.createElement('p');
+    profileParagraph.classList.add('profile__paragraph');
+    profileParagraph.textContent = popupItemName.value;
+  const profileEditButton = document.createElement('button');
+    profileEditButton.classList.add('profile__edit-button');
+
+  profileContainer.append(profileTitle, profileParagraph, profileEditButton);
 
   let popupItemName = document.querySelector('.popup__item-name');
   let popupItemProfession = document.querySelector('.popup__item-profession');
-
-  profileTitle.innerHTML = `
-    <h1 class="profile__title">${popupItemName.value}</h1>
-    <p class="profile__paragraph">${popupItemProfession.value}</p>
-    <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
-  `;
 
   popupItemName.value = '';
   popupItemProfession.value = '';
