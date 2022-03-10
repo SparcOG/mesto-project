@@ -3,8 +3,8 @@ let popupСlose = document.querySelector('.popup');
 let editButton = document.querySelector('.profile__edit-button');
 let closeButton = document.querySelector('.popup__close-button');
 let popupHandlerButton = document.querySelector('.popup__handler-button');
+let profileInfo = document.querySelector('.profile__info');
 
-let profileContainer = document.querySelector('.profile__container');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
@@ -17,27 +17,26 @@ function hidePopup() {
 editButton.addEventListener('click', hidePopup);
 closeButton.addEventListener('click', showPopup);
 
-//Функция замены текст
+//Функции замены текст
 
- function addProfile () {
-  const profileTitle = document.createElement('h1');
-    profileTitle.classList.add('profile__title');
-    profileTitle.textContent = popupItemName.value;
-  const profileParagraph = document.createElement('p');
-    profileParagraph.classList.add('profile__paragraph');
-    profileParagraph.textContent = popupItemName.value;
-  const profileEditButton = document.createElement('button');
-    profileEditButton.classList.add('profile__edit-button');
+function addProfile(popupItemNameValue, popupItemProfessionValue) {
+  const profileСontainerTemplate = document.querySelector('#profile__container-template').content;
+  const profileContainer = document.querySelector('.profile__container').cloneNode(true);
 
-  profileContainer.append(profileTitle, profileParagraph, profileEditButton);
+  profileContainer.querySelector('.profile__title').textContent = popupItemNameValue;
+  profileContainer.querySelector('.profile__paragraph').textContent = popupItemProfessionValue;
+  profileContainer.querySelector('.profile__edit-button').textContent = 234234;
 
+  profileInfo.append(profileContainer);
+};
+
+
+popupHandlerButton.addEventListener('click', function () {
   let popupItemName = document.querySelector('.popup__item-name');
   let popupItemProfession = document.querySelector('.popup__item-profession');
 
+  addProfile(popupItemName.value, popupItemProfession.value);
+
   popupItemName.value = '';
   popupItemProfession.value = '';
-
-  popupСlose.classList.remove('popup_opened');
-}
-
-popupHandlerButton.addEventListener('click', addProfile);
+});
