@@ -17,6 +17,10 @@ function hidePopup() {
 editButton.addEventListener('click', hidePopup);
 closeButton.addEventListener('click', showPopup);
 
+editButton.addEventListener('click', function (evt) {
+  evt.target.classList.toggle('popup_opened');
+});
+
 //Функции замены текст
 
 function addProfile(popupItemNameValue, popupItemProfessionValue) {
@@ -25,9 +29,9 @@ function addProfile(popupItemNameValue, popupItemProfessionValue) {
 
   profileContainer.querySelector('.profile__title').textContent = popupItemNameValue;
   profileContainer.querySelector('.profile__paragraph').textContent = popupItemProfessionValue;
-  profileContainer.querySelector('.profile__edit-button').textContent = 234234;
 
   profileInfo.append(profileContainer);
+  hidePopup();
 };
 
 
