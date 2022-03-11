@@ -1,10 +1,9 @@
 //Открытие и закрытие попапа, а также очиска формы при закрытии
-
-
-let closeButton = document.querySelector('.popup__close-button');
-let popupHandlerButton = document.querySelector('.popup__handler-button');
-let profileInfo = document.querySelector('.profile__info');
-
+const closeButton = document.querySelector('.popup__close-button');
+const popupHandlerButton = document.querySelector('.popup__handler-button');
+const profileInfo = document.querySelector('.profile__info');
+const popupСlose = document.querySelector('.popup');
+const editButton = document.querySelector('.profile__container');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
@@ -12,42 +11,51 @@ function showPopup() {
 
 closeButton.addEventListener('click', showPopup);
 
+editButton.addEventListener('click', function (e) {
+  const popupItemName = document.querySelector('.popup__item-name');
+  const popupItemProfession = document.querySelector('.popup__item-profession');
+    popupItemName.value = 'Жак-Ив Кусто';
+    popupItemProfession.value = 'Исследователь океана';
 
-
-
+  if (e.target.classList.contains('profile__edit-button')) {
+    popupСlose.classList.add('popup_opened');
+  }
+});
 
 //Функции замены текст
-
 function addProfile(popupItemNameValue, popupItemProfessionValue) {
-  let editButton = document.querySelector('.profile__edit-button');
 
-  const profileContainer = document.createElement('div');
-  profileContainer.classList.add('profile__container');
+  const profileContainer = document.querySelector('.profile__container');
+
+  const profileTitleRemove = document.querySelector('.profile__title');
+  const profileParagraphRemove = document.querySelector('.profile__paragraph');
+  const profileEditButtonRemove = document.querySelector('.profile__edit-button');
 
   const profileTitle = document.createElement('h1');
-  profileTitle.classList.add('song__artist');
-  profileTitle.textContent = popupItemNameValue;
+    profileTitle.classList.add('profile__title');
+    profileTitle.textContent = popupItemNameValue;
 
   const profileParagraph = document.createElement('p');
-  profileParagraph.classList.add('profile__paragraph');
-  profileParagraph.textContent = popupItemProfessionValue;
+    profileParagraph.classList.add('profile__paragraph');
+    profileParagraph.textContent = popupItemProfessionValue;
 
   const profileEditButton = document.createElement('button');
-  profileEditButton.classList.add('profile__edit-button');
+    profileEditButton.classList.add('profile__edit-button');
 
-  profileContainer.append(profileTitle, profileParagraph, profileEditButton);
-  profileInfo.append(profileContainer);
+  profileContainer.append(profileTitle, profileParagraph);
+  profileContainer.append(profileEditButton);
 
-  editButton.addEventListener('click', function (evt) {
-    evt.target.classList.toggle('popup_opened');
-  });
+  popupСlose.classList.remove('popup_opened');
+
+  profileTitleRemove.remove();
+  profileParagraphRemove.remove();
+  profileEditButtonRemove.remove();
 
 };
 
-
 popupHandlerButton.addEventListener('click', function () {
-  let popupItemName = document.querySelector('.popup__item-name');
-  let popupItemProfession = document.querySelector('.popup__item-profession');
+  const popupItemName = document.querySelector('.popup__item-name');
+  const popupItemProfession = document.querySelector('.popup__item-profession');
 
   addProfile(popupItemName.value, popupItemProfession.value);
 
@@ -57,44 +65,6 @@ popupHandlerButton.addEventListener('click', function () {
 
 
 
-let popupСlose = document.querySelector('.popup');
-let editButton = document.querySelector('.profile__container');
-
-
-editButton.addEventListener('click', function (e) {
-  if (e.target.classList.contains('profile__edit-button')) {
-    popupСlose.classList.add('popup_opened');
-  }
-});
-
-const container2 = document.querySelector('.profile__container');
-const profileEditButton = document.createElement('button');
-  profileEditButton.classList.add('profile__edit-button');
-  container2.append(profileEditButton);
-
-
-
-
-
-
-
-
-  const btns = document.querySelectorAll('.alert-container');
-
-  for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function (e) {
-      if (e.target.classList.contains('alert-button')) {
-        alert(e.target.innerHTML);
-      }
-    });
-  }
-
-  // Add a new button dynamically
-  const newBtn = document.createElement('button');
-  newBtn.classList.add('alert-button');
-  newBtn.innerHTML = 'Button 3';
-  const container = document.querySelector('.alert-container');
-  container.append(newBtn);
 
 
 
