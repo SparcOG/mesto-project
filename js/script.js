@@ -1,6 +1,6 @@
 //Открытие и закрытие попапа, а также очиска формы при закрытии
-let popupСlose = document.querySelector('.popup');
-let editButton = document.querySelector('.profile__edit-button');
+
+
 let closeButton = document.querySelector('.popup__close-button');
 let popupHandlerButton = document.querySelector('.popup__handler-button');
 let profileInfo = document.querySelector('.profile__info');
@@ -10,8 +10,10 @@ function showPopup() {
   popupСlose.classList.remove('popup_opened');
 }
 
-
 closeButton.addEventListener('click', showPopup);
+
+
+
 
 
 //Функции замены текст
@@ -53,10 +55,22 @@ popupHandlerButton.addEventListener('click', function () {
   popupItemProfession.value = '';
 });
 
+let editButton = document.querySelector('.profile__container');
+let popupСlose = document.querySelector('.popup');
+
+editButton.addEventListener('click', function (e) {
+  if (e.target.classList.contains('profile__edit-button')) {
+    popupСlose.classList.add('popup_opened');
+  }
+});
 
 
 
-function brat() {
+
+
+
+
+
   const btns = document.querySelectorAll('.alert-container');
 
   for (let i = 0; i < btns.length; i++) {
@@ -74,6 +88,5 @@ function brat() {
   const container = document.querySelector('.alert-container');
   container.append(newBtn);
 
-}
 
-brat();
+
