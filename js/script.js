@@ -55,14 +55,22 @@ popupHandlerButton.addEventListener('click', function () {
   popupItemProfession.value = '';
 });
 
-let editButton = document.querySelector('.profile__container');
+
+
 let popupСlose = document.querySelector('.popup');
+let editButton = document.querySelector('.profile__container');
+
 
 editButton.addEventListener('click', function (e) {
   if (e.target.classList.contains('profile__edit-button')) {
     popupСlose.classList.add('popup_opened');
   }
 });
+
+const container2 = document.querySelector('.profile__container');
+const profileEditButton = document.createElement('button');
+  profileEditButton.classList.add('profile__edit-button');
+  container2.append(profileEditButton);
 
 
 
