@@ -17,21 +17,26 @@ function hidePopup() {
 editButton.addEventListener('click', hidePopup);
 closeButton.addEventListener('click', showPopup);
 
-editButton.addEventListener('click', function (evt) {
-  evt.target.classList.toggle('popup_opened');
-});
 
 //Функции замены текст
 
 function addProfile(popupItemNameValue, popupItemProfessionValue) {
-  const profileСontainerTemplate = document.querySelector('#profile__container-template').content;
-  const profileContainer = document.querySelector('.profile__container').cloneNode(true);
+  const profileContainer = document.createElement('div');
+  profileContainer.classList.add('profile__container');
 
-  profileContainer.querySelector('.profile__title').textContent = popupItemNameValue;
-  profileContainer.querySelector('.profile__paragraph').textContent = popupItemProfessionValue;
+  const profileTitle = document.createElement('h1');
+  profileTitle.classList.add('song__artist');
+  profileTitle.textContent = popupItemNameValue;
 
+  const profileParagraph = document.createElement('p');
+  profileParagraph.classList.add('profile__paragraph');
+  profileParagraph.textContent = popupItemNameValue;
+
+  const profileEditButton = document.createElement('button');
+  profileEditButton.classList.add('profile__edit-button');
+
+  profileContainer.append(profileTitle, profileParagraph, profileEditButton);
   profileInfo.append(profileContainer);
-  hidePopup();
 };
 
 
