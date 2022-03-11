@@ -47,6 +47,7 @@ block gallery*/
 
 /*
 
+
 block popup*/
 @import url(../blocks/popup/popup.css);
 /*elements*/
@@ -68,3 +69,9 @@ block footer*/
 @import url(../blocks/footer/footer.css);
 /*elements*/
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+
+.alert-container {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+}
