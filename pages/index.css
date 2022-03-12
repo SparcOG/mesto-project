@@ -47,7 +47,6 @@ block gallery*/
 
 /*
 
-
 block popup*/
 @import url(../blocks/popup/popup.css);
 /*elements*/
@@ -62,6 +61,23 @@ block popup*/
 @import url(../blocks/popup/__title/popup__title.css);
 /*modifiers*/
 @import url(../blocks/popup/_opened/popup_opened.css);
+
+/*
+
+block popup-add*/
+@import url(../blocks/popup-add/popup-add.css);
+/*elements*/
+@import url(../blocks/popup-add/__close-button/popup-add__close-button.css);
+@import url(../blocks/popup-add/__handler-button/popup-add__handler-button.css);
+@import url(../blocks/popup-add/__container/popup-add__container.css);
+@import url(../blocks/popup-add/__elements/popup-add__elements.css);
+@import url(../blocks/popup-add/__form/popup-add__form.css);
+@import url(../blocks/popup-add/__input-container/popup-add__input-container.css);
+@import url(../blocks/popup-add/__item-name/popup-add__item-name.css);
+@import url(../blocks/popup-add/__item-profession/popup-add__item-profession.css);
+@import url(../blocks/popup-add/__title/popup-add__title.css);
+/*modifiers*/
+@import url(../blocks/popup-add/_opened/popup-add_opened.css);
 
 /*
 

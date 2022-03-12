@@ -8,8 +8,8 @@ const editButton = document.querySelector('.profile__container');
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
 }
+  closeButton.addEventListener('click', showPopup);
 
-closeButton.addEventListener('click', showPopup);
 
 editButton.addEventListener('click', function (e) {
   const popupItemName = document.querySelector('.popup__item-name');
@@ -50,7 +50,6 @@ function addProfile(popupItemNameValue, popupItemProfessionValue) {
   profileTitleRemove.remove();
   profileParagraphRemove.remove();
   profileEditButtonRemove.remove();
-
 };
 
 popupHandlerButton.addEventListener('click', function () {
@@ -62,6 +61,8 @@ popupHandlerButton.addEventListener('click', function () {
   popupItemName.value = '';
   popupItemProfession.value = '';
 });
+
+//
 
 
 
