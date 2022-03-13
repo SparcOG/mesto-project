@@ -80,7 +80,15 @@ function closePopupAddButton() {
 }
 profileAddButton.addEventListener('click', closePopupAddButton);
 
+//----------------------------Новая функциональность-----------------------------------------------------------------------------------
+//Добавление карточки
+const gallery = document.querySelector('.gallery');
+const galleryContainerTemplate = document.querySelector('#gallery__container-template');
+const galleryContainerClone = galleryContainerTemplate.content.cloneNode(true);
 
+document.querySelector('.gallery__image').src = './images/gora-elbrus.jpg';
+document.querySelector('.gallery__title').textContent = 'Дюк111 Корморант';
+gallery.append(galleryContainerClone);
 
 
 
