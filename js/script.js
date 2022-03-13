@@ -7,6 +7,7 @@ const editButton = document.querySelector('.profile__container');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
+  addingСardToMarkup();
 }
   closeButton.addEventListener('click', showPopup);
 
@@ -82,13 +83,27 @@ profileAddButton.addEventListener('click', closePopupAddButton);
 
 //----------------------------Новая функциональность-----------------------------------------------------------------------------------
 //Добавление карточки
-const gallery = document.querySelector('.gallery');
-const galleryContainerTemplate = document.querySelector('#gallery__container-template');
-const galleryContainerClone = galleryContainerTemplate.content.cloneNode(true);
+function addingСardToMarkup() {
+  const gallery = document.querySelector('.gallery');
+  const galleryContainerTemplate = document.querySelector('#gallery__container-template');
+  const galleryContainerClone = galleryContainerTemplate.content.cloneNode(true);
 
-document.querySelector('.gallery__image').src = './images/gora-elbrus.jpg';
-document.querySelector('.gallery__title').textContent = 'Дюк111 Корморант';
-gallery.append(galleryContainerClone);
+  galleryContainerClone.querySelector('.gallery__image').src = './images/gora-elbrus.jpg';
+  galleryContainerClone.querySelector('.gallery__title').textContent = 'Дюк111 Корморант';
+  gallery.prepend(galleryContainerClone);
+}
+
+const popupAddButtonHandlerButton = document.querySelector('.popup-add-button__handler-button');
+
+function closePopupHandlerButton() {
+  popupAddButton.classList.add('popup-add-button_opened');
+  addingСardToMarkup();
+}
+popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
+
+
+
+
 
 
 
