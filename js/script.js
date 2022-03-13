@@ -1,4 +1,4 @@
-//Открытие и закрытие попапа, а также очиска формы при закрытии
+//Открытие и закрытие popup
 const closeButton = document.querySelector('.popup__close-button');
 const popupHandlerButton = document.querySelector('.popup__handler-button');
 const profileInfo = document.querySelector('.profile__info');
@@ -22,7 +22,7 @@ editButton.addEventListener('click', function (e) {
   }
 });
 
-//Функции замены текст
+//Функция замены текста popup
 function addProfile(popupItemNameValue, popupItemProfessionValue) {
 
   const profileContainer = document.querySelector('.profile__container');
@@ -62,7 +62,23 @@ popupHandlerButton.addEventListener('click', function () {
   popupItemProfession.value = '';
 });
 
-//
+
+//----------------------------Новая функциональность-----------------------------------------------------------------------------------
+//Открытие и закрытие popup-add-button
+const popupAddButton = document.querySelector('.popup-add-button');
+const popupAddButtonClose = document.querySelector('.popup-add-button__close-button');
+const profileAddButton = document.querySelector('.profile__add-button');
+
+
+function showPopupAddButton() {
+  popupAddButton.classList.remove('popup-add-button_opened');
+}
+popupAddButtonClose.addEventListener('click', showPopupAddButton);
+
+function closePopupAddButton() {
+  popupAddButton.classList.add('popup-add-button_opened');
+}
+profileAddButton.addEventListener('click', closePopupAddButton);
 
 
 
