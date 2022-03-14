@@ -83,23 +83,38 @@ profileAddButton.addEventListener('click', closePopupAddButton);
 
 //----------------------------Новая функциональность-----------------------------------------------------------------------------------
 //Добавление карточки
-function addingСardToMarkup() {
+function addingСardToMarkup(galleryImage, galleryTitle) {
   const gallery = document.querySelector('.gallery');
   const galleryContainerTemplate = document.querySelector('#gallery__container-template');
   const galleryContainerClone = galleryContainerTemplate.content.cloneNode(true);
 
-  galleryContainerClone.querySelector('.gallery__image').src = './images/gora-elbrus.jpg';
-  galleryContainerClone.querySelector('.gallery__title').textContent = 'Дюк111 Корморант';
+  galleryContainerClone.querySelector('.gallery__image').src = galleryImage;
+  galleryContainerClone.querySelector('.gallery__title').textContent = galleryTitle;
   gallery.prepend(galleryContainerClone);
 }
 
 const popupAddButtonHandlerButton = document.querySelector('.popup-add-button__handler-button');
 
-function closePopupHandlerButton() {
-  popupAddButton.classList.add('popup-add-button_opened');
-  addingСardToMarkup();
-}
-popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
+
+
+popupAddButtonHandlerButton.addEventListener('click', function () {
+  const galleryImage = document.querySelector('.gallery__image');
+  const galleryTitle = document.querySelector('.gallery__title');
+
+  addingСardToMarkup(galleryImage.value, galleryTitle.value);
+
+  galleryImage.value = '';
+  galleryTitle.value = '';
+});
+
+
+
+
+
+
+
+
+
 
 
 
