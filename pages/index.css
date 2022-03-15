@@ -74,7 +74,7 @@ block popup-add-button*/
 @import url(../blocks/popup-add-button/__form/popup-add-button__form.css);
 @import url(../blocks/popup-add-button/__input-container/popup-add-button__input-container.css);
 @import url(../blocks/popup-add-button/__item-name/popup-add-button__item-name.css);
-@import url(../blocks/popup-add-button/__item-profession/popup-add-button__item-profession.css);
+@import url(../blocks/popup-add-button/__item-image/popup-add-button__item-image.css);
 @import url(../blocks/popup-add-button/__title/popup-add-button__title.css);
 /*modifiers*/
 @import url(../blocks/popup-add-button/_opened/popup-add-button_opened.css);

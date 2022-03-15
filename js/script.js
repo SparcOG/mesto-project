@@ -7,7 +7,6 @@ const editButton = document.querySelector('.profile__container');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
-  addingСardToMarkup();
 }
   closeButton.addEventListener('click', showPopup);
 
@@ -83,29 +82,34 @@ profileAddButton.addEventListener('click', closePopupAddButton);
 
 //----------------------------Новая функциональность-----------------------------------------------------------------------------------
 //Добавление карточки
-function addingСardToMarkup(galleryImage, galleryTitle) {
+function addingСardToMarkup(galleryTitle, galleryImage) {
+
+
   const gallery = document.querySelector('.gallery');
   const galleryContainerTemplate = document.querySelector('#gallery__container-template');
   const galleryContainerClone = galleryContainerTemplate.content.cloneNode(true);
 
-  galleryContainerClone.querySelector('.gallery__image').src = galleryImage;
   galleryContainerClone.querySelector('.gallery__title').textContent = galleryTitle;
+  galleryContainerClone.querySelector('.gallery__image').src = galleryImage;
   gallery.prepend(galleryContainerClone);
 }
 
 const popupAddButtonHandlerButton = document.querySelector('.popup-add-button__handler-button');
 
+function closePopupHandlerButton() {
+  popupAddButton.classList.add('popup-add-button_opened');
+  const galleryTitle = document.querySelector('.popup-add-button__item-name');
+  const galleryImage = document.querySelector('.popup-add-button__item-image');
 
+  addingСardToMarkup(galleryTitle.value, galleryImage.value);
 
-popupAddButtonHandlerButton.addEventListener('click', function () {
-  const galleryImage = document.querySelector('.gallery__image');
-  const galleryTitle = document.querySelector('.gallery__title');
-
-  addingСardToMarkup(galleryImage.value, galleryTitle.value);
-
-  galleryImage.value = '';
   galleryTitle.value = '';
-});
+  galleryImage.value = '';
+}
+popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
+
+
+
 
 
 
