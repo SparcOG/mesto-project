@@ -108,6 +108,11 @@ function closePopupHandlerButton() {
 }
 popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
 
+//----------------------------Новая функциональность-----------------------------------------------------------------------------------
+//Добавление карточки
+document.querySelectorAll('.gallery__like-heart').addEventListener('click', function (evt) {
+  evt.target.classList.toggle('gallery__like-heart_active');
+});
 
 
 

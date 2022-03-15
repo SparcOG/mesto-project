@@ -1,0 +1,11 @@
+.gallery__like-heart_active {
+  cursor: pointer;
+  transition: opacity .3s;
+  margin: 0 30px 0 0;
+  padding: 0;
+  border: 0;
+  background-image: url(/images/icons/heart-active.svg);
+  width: 22px;
+  height: 19px;
+  opacity: 1;
+}

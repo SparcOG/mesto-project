@@ -43,6 +43,7 @@ block gallery*/
 @import url(../blocks/gallery/__background/gallery__background.css);
 @import url(../blocks/gallery/__image/gallery__image.css);
 @import url(../blocks/gallery/__like-heart/gallery__like-heart.css);
+@import url(../blocks/gallery/__like-heart/_active/gallery__like-heart_active.css);
 @import url(../blocks/gallery/__title/gallery__title.css);
 
 /*
