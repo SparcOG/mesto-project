@@ -122,7 +122,14 @@ document.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
   });
 });
 
+//----------------------------Новая функциональность-------------------------------------------------------------------------
+//Удаление карточки
+const galleryTrash = document.querySelector('.gallery__trash');
 
+galleryTrash.addEventListener('click', function () {
+  const galleryCard = galleryTrash.closest('.gallery__card');
+  galleryCard.remove();
+});
 
 
 
