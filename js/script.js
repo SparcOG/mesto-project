@@ -92,7 +92,7 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
   galleryContainerClone.querySelector('.gallery__title').textContent = galleryTitle;
   galleryContainerClone.querySelector('.gallery__image').src = galleryImage;
 
-
+//Добавление лайка к карточке
   galleryContainerClone.querySelector('.gallery__like-heart').addEventListener('click', function (evt) {
     evt.target.classList.toggle('gallery__like-heart_active');
   });
@@ -115,13 +115,10 @@ function closePopupHandlerButton() {
 popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
 
 //----------------------------Новая функциональность-----------------------------------------------------------------------------------
-//Добавление карточки
-const galleryLikeHeart = document.querySelector('.gallery__like-heart');
-
-
-document.querySelectorAll('.gallery__like-heart').forEach(item => {
-  item.addEventListener('click', event => {
-    galleryLikeHeart.classList.toggle('gallery__like-heart_active');
+//Добавление лайка к карточке
+document.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
+  galleryLikeHeart.addEventListener('click', (evt) => {
+    evt.target.classList.toggle('gallery__like-heart_active');
   });
 });
 
