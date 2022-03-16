@@ -116,11 +116,14 @@ popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
 
 //----------------------------Новая функциональность-----------------------------------------------------------------------------------
 //Добавление карточки
+const galleryLikeHeart = document.querySelector('.gallery__like-heart');
 
 
-function addProfileeeeeee() {
-
-}
+document.querySelectorAll('.gallery__like-heart').forEach(item => {
+  item.addEventListener('click', event => {
+    galleryLikeHeart.classList.toggle('gallery__like-heart_active');
+  });
+});
 
 
 
