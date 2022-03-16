@@ -1,0 +1,12 @@
+.gallery__trash {
+  cursor: pointer;
+  background-image: url(../../../images/icons/trash.svg);
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  width: 18px;
+  height: 19px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
