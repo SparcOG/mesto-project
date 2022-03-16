@@ -126,10 +126,13 @@ document.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
 //Удаление карточки
 const galleryTrash = document.querySelector('.gallery__trash');
 
-galleryTrash.addEventListener('click', function () {
-  const galleryCard = galleryTrash.closest('.gallery__card');
-  galleryCard.remove();
+document.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
+  galleryTrash.addEventListener('click', (evt) => {
+    const galleryCard = galleryTrash.closest('.gallery__card');
+    galleryCard.remove();
+  });
 });
+
 
 
 
