@@ -14,7 +14,7 @@ const popupAddButtonHandlerButton = document.querySelector('.popup-add-button__h
 const profileAddButton = document.querySelector('.profile__add-button');
 
 //Добавление карточки
-const galleryContainerTemplate = document.querySelector('.gallery__container-template');
+const galleryContainerTemplate = document.querySelector('.gallery__container-template').content;
 const gallery = document.querySelector('.gallery');
 
 
@@ -91,7 +91,7 @@ profileAddButton.addEventListener('click', closePopupAddButton);
 //Добавление карточки
 function addingСardToMarkup(galleryTitle, galleryImage) {
   const gallery = document.querySelector('.gallery');
-  const galleryContainerClone = galleryContainerTemplate.content.cloneNode(true);
+  const galleryContainerClone = galleryContainerTemplate.cloneNode(true);
 
   galleryContainerClone.querySelector('.gallery__title').textContent = galleryTitle;
   galleryContainerClone.querySelector('.gallery__image').src = galleryImage;
