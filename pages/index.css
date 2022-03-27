@@ -50,6 +50,13 @@ block gallery*/
 
 /*
 
+block footer*/
+@import url(../blocks/footer/footer.css);
+/*elements*/
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
+/*
+
 block popup*/
 @import url(../blocks/popup/popup.css);
 /*elements*/
@@ -84,69 +91,12 @@ block popup-add-button*/
 
 /*
 
-block footer*/
-@import url(../blocks/footer/footer.css);
+block popup-show-picture*/
+@import url(../blocks/popup-show-picture/popup-show-picture.css);
 /*elements*/
-@import url(../blocks/footer/__copyright/footer__copyright.css);
-
-.popup-show-picture__image {
-  max-width: 816px;
-  max-height: 540px;
-}
-
-.popup-show-picture__title {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  margin: 18px 0 0 0;
-}
-
-.popup-show-picture__container {
-  display: flex;
-  position: relative;
-}
-
-.popup-show-picture__close-button {
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  background-image: url(../../../images/icons/close-icon.svg);
-  background-color: transparent;
-  transition: opacity .3s;
-  border: 0;
-  padding: 0;
-  position: relative;
-  left: 8px;
-  bottom: 40px;
-}
-
-.popup-show-picture__close-button:hover {
-  opacity: .8;
-}
-
-@media screen and (max-width: 500px) {
-  .popup-show-picture__close-button  {
-    width: 20px;
-    height: 20px;
-    background-image: url(../../../images/icons/close-icon-small.svg);
-    position: absolute;
-    bottom: calc(100% + 16px);
-    left: calc(100% - 20px);
-  }
-}
-
-.popup-show-picture {
-  display: flex;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-}
-
-.popup-show-picture_opened {
-  display: flex;
-}
+@import url(../blocks/popup-show-picture/__close-button/popup-show-picture__close-button.css);
+@import url(../blocks/popup-show-picture/__container/popup-show-picture__container.css);
+@import url(../blocks/popup-show-picture/__image/popup-show-picture__image.css);
+@import url(../blocks/popup-show-picture/__title/popup-show-picture__title.css);
+/*modifiers*/
+@import url(../blocks/popup-show-picture/_opened/popup-show-picture_opened.css);
