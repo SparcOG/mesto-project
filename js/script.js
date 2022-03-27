@@ -90,7 +90,6 @@ profileAddButton.addEventListener('click', closePopupAddButton);
 //----------------------------Новая функциональность-----------------------------------------------------------------------------------
 //Добавление карточки
 function addingСardToMarkup(galleryTitle, galleryImage) {
-  const gallery = document.querySelector('.gallery');
   const galleryContainerClone = galleryContainerTemplate.cloneNode(true);
 
   galleryContainerClone.querySelector('.gallery__title').textContent = galleryTitle;
@@ -125,22 +124,9 @@ function closePopupHandlerButton() {
 }
 popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
 
-//----------------------------Новая функциональность-----------------------------------------------------------------------------------
-//Добавление лайка к карточке
-document.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
-  galleryLikeHeart.addEventListener('click', (evt) => {
-    evt.target.classList.toggle('gallery__like-heart_active');
-  });
-});
-
 //----------------------------Новая функциональность-------------------------------------------------------------------------
 //Удаление карточки
-document.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
-  galleryTrash.addEventListener('click', () => {
-    const galleryCard = galleryTrash.closest('.gallery__card');
-    galleryCard.remove();
-  });
-});
+
 
 //----------------------------Новая функциональность-------------------------------------------------------------------------
 //Добавление массива карточек в DOM
@@ -176,9 +162,24 @@ const initialCards = [
 
     clonСards.querySelector('.gallery__title').textContent = card.name;
     clonСards.querySelector('.gallery__image').src = card.link;
+//Добавлнение лайка
+    clonСards.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
+      galleryLikeHeart.addEventListener('click', (evt) => {
+        evt.target.classList.toggle('gallery__like-heart_active');
+      });
+    });
+//Удаление карточки
+    clonСards.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
+      galleryTrash.addEventListener('click', () => {
+        const galleryCard = galleryTrash.closest('.gallery__card');
+        galleryCard.remove();
+      });
+    });
 
     gallery.append(clonСards)
   })
+
+  //Нужно попробовать добавить слушателя кликов
 
 
 
