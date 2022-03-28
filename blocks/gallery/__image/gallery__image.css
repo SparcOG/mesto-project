@@ -1,5 +1,6 @@
 .gallery__image {
   display: block;
+  cursor: pointer;
   object-fit: fill;
   width: 282px;
   height: 282px;

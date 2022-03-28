@@ -17,22 +17,25 @@ const profileAddButton = document.querySelector('.profile__add-button');
 const galleryContainerTemplate = document.querySelector('.gallery__container-template').content;
 const gallery = document.querySelector('.gallery');
 
+//Открытие и закрытие popup-show-picture
+const pictureCloseButton = document.querySelector('.popup-show-picture__close-button');
+const showPicture = document.querySelector('.popup-show-picture');
 
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
-}
+};
   closeButton.addEventListener('click', showPopup);
 
 
-editButton.addEventListener('click', function (e) {
+editButton.addEventListener('click', function (evt) {
   const popupItemName = document.querySelector('.popup__item-name');
   const popupItemProfession = document.querySelector('.popup__item-profession');
     popupItemName.value = 'Жак-Ив Кусто';
     popupItemProfession.value = 'Исследователь океана';
 
-  if (e.target.classList.contains('profile__edit-button')) {
+  if (evt.target.classList.contains('profile__edit-button')) {
     popupСlose.classList.add('popup_opened');
-  }
+  };
 });
 
 //Функция замены текста popup
@@ -75,19 +78,17 @@ popupHandlerButton.addEventListener('click', function () {
   popupItemProfession.value = '';
 });
 
-
-//----------------------------Новая функциональность-----------------------------------------------------------------------------------
 function showPopupAddButton() {
   popupAddButton.classList.remove('popup-add-button_opened');
-}
+};
 popupAddButtonClose.addEventListener('click', showPopupAddButton);
 
 function closePopupAddButton() {
   popupAddButton.classList.add('popup-add-button_opened');
-}
+};
 profileAddButton.addEventListener('click', closePopupAddButton);
 
-//----------------------------Новая функциональность-----------------------------------------------------------------------------------
+
 //Добавление карточки
 function addingСardToMarkup(galleryTitle, galleryImage) {
   const galleryContainerClone = galleryContainerTemplate.cloneNode(true);
@@ -124,9 +125,6 @@ function closePopupHandlerButton() {
 }
 popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
 
-
-
-//----------------------------Новая функциональность-------------------------------------------------------------------------
 //Добавление массива карточек в DOM
 const initialCards = [
   {
@@ -155,29 +153,47 @@ const initialCards = [
   }
   ];
 
-  initialCards.forEach(function (card) {
-    const clonСards = galleryContainerTemplate.cloneNode(true);
+initialCards.forEach(function (card) {
+  const clonСards = galleryContainerTemplate.cloneNode(true);
 
-    clonСards.querySelector('.gallery__title').textContent = card.name;
-    clonСards.querySelector('.gallery__image').src = card.link;
+  clonСards.querySelector('.gallery__title').textContent = card.name;
+  clonСards.querySelector('.gallery__image').src = card.link;
 //Добавлнение лайка
-    clonСards.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
-      galleryLikeHeart.addEventListener('click', (evt) => {
-        evt.target.classList.toggle('gallery__like-heart_active');
-      });
+  clonСards.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
+    galleryLikeHeart.addEventListener('click', (evt) => {
+      evt.target.classList.toggle('gallery__like-heart_active');
     });
+});
 //Удаление карточки
-    clonСards.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
-      galleryTrash.addEventListener('click', () => {
-        const galleryCard = galleryTrash.closest('.gallery__card');
-        galleryCard.remove();
-      });
+clonСards.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
+  galleryTrash.addEventListener('click', () => {
+    const galleryCard = galleryTrash.closest('.gallery__card');
+    galleryCard.remove();
     });
-
-    gallery.append(clonСards)
+});
+//Открытие картинки
+clonСards.querySelectorAll('.gallery__image').forEach(galleryImage => {
+  galleryImage.addEventListener('click', () => {
+    showPicture.querySelector('.popup-show-picture__title').textContent = card.name;
+    showPicture.querySelector('.popup-show-picture__image').src = card.link;
+    showPicture.classList.add('popup-show-picture_opened');
   });
-//Нужно написать стили для попапа картики, по аналогии с формой попапа. При клике попап должен открыватся
-//и название картинки попапа должно попадать под картинку
+});
+
+  gallery.append(clonСards)
+});
+
+function showPopuPicture() {
+  showPicture.classList.remove('popup-show-picture_opened');
+};
+  pictureCloseButton.addEventListener('click', showPopuPicture);
+
+
+
+
+
+
+
 
 
 
