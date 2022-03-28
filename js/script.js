@@ -109,10 +109,21 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
     });
   });
 
+ //Открытие картинки
+  initialCards.forEach(function () {
+    galleryContainerClone.querySelectorAll('.gallery__image').forEach(galleryImage2 => {
+      galleryImage2.addEventListener('click', () => {
+        showPicture.querySelector('.popup-show-picture__title').textContent = galleryTitle;
+        showPicture.querySelector('.popup-show-picture__image').src = galleryImage;
+        showPicture.classList.add('popup-show-picture_opened');
+      });
+    });
+  })
+
   popupAddButton.classList.remove('popup-add-button_opened');
 
   gallery.prepend(galleryContainerClone);
-}
+};
 
 function closePopupHandlerButton() {
   const galleryTitle = document.querySelector('.popup-add-button__item-name');
