@@ -101,7 +101,7 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
     evt.target.classList.toggle('gallery__like-heart_active');
   });
 
-  //Удаление карточки новоcозданого елемента
+//Удаление карточки новоcозданого елемента
   galleryContainerClone.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
     galleryTrash.addEventListener('click', () => {
       const galleryCard = galleryTrash.closest('.gallery__card');
@@ -109,7 +109,7 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
     });
   });
 
- //Открытие картинки
+ //Открытие картинки на созданых картинках
   initialCards.forEach(function () {
     galleryContainerClone.querySelectorAll('.gallery__image').forEach(galleryImage2 => {
       galleryImage2.addEventListener('click', () => {
