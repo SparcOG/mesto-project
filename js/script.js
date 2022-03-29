@@ -5,12 +5,12 @@ const profileInfo = document.querySelector('.profile__info');
 const popupСlose = document.querySelector('.popup');
 
 //Слушаем клик
-const editButton = document.querySelector('.profile__container');
+const profile = document.querySelector('.profile__container');
 
 //Открытие и закрытие popup-add-button
 const popupAddButton = document.querySelector('.popup-add-button');
 const popupAddButtonClose = document.querySelector('.popup-add-button__close-button');
-const popupAddButtonHandlerButton = document.querySelector('.popup-add-button__handler-button');
+const popupAddButtonHandler = document.querySelector('.popup-add-button__handler-button');
 const profileAddButton = document.querySelector('.profile__add-button');
 
 //Добавление карточки
@@ -28,7 +28,7 @@ function showPopup() {
   closeButton.addEventListener('click', showPopup);
 
 
-editButton.addEventListener('click', function (evt) {
+  profile.addEventListener('click', function (evt) {
   const popupItemName = document.querySelector('.popup__item-name');
   const popupItemProfession = document.querySelector('.popup__item-profession');
   const profileTitle = document.querySelector('.profile__title');
@@ -115,8 +115,8 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
     galleryTrash.addEventListener('click', () => {
       const galleryCard = galleryTrash.closest('.gallery__card');
       galleryCard.remove();
-    });
-  });
+    })
+  })
 
  //Открытие картинки на созданых картинках
   initialCards.forEach(function () {
@@ -125,8 +125,8 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
         showPicture.querySelector('.popup-show-picture__title').textContent = galleryTitle;
         showPicture.querySelector('.popup-show-picture__image').src = galleryImage;
         showPicture.classList.add('popup-show-picture_opened');
-      });
-    });
+      })
+    })
   })
 
   popupAddButton.classList.remove('popup-add-button_opened');
@@ -144,7 +144,7 @@ function closePopupHandlerButton() {
   galleryTitle.value = '';
   galleryImage.value = '';
 }
-popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
+popupAddButtonHandler.addEventListener('click', closePopupHandlerButton);
 
 
 //Добавление массива карточек в DOM
@@ -210,12 +210,10 @@ clonСards.querySelectorAll('.gallery__image').forEach(galleryImage => {
 })
 
 
-function showPopuPicture() {
+function showPopupPicture() {
   showPicture.classList.remove('popup-show-picture_opened');
 }
-  pictureCloseButton.addEventListener('click', showPopuPicture);
-
-
+  pictureCloseButton.addEventListener('click', showPopupPicture);
 
 
 
