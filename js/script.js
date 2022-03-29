@@ -21,22 +21,28 @@ const gallery = document.querySelector('.gallery');
 const pictureCloseButton = document.querySelector('.popup-show-picture__close-button');
 const showPicture = document.querySelector('.popup-show-picture');
 
+
 function showPopup() {
   popupСlose.classList.remove('popup_opened');
-};
+}
   closeButton.addEventListener('click', showPopup);
 
 
 editButton.addEventListener('click', function (evt) {
   const popupItemName = document.querySelector('.popup__item-name');
   const popupItemProfession = document.querySelector('.popup__item-profession');
-    popupItemName.value = 'Жак-Ив Кусто';
-    popupItemProfession.value = 'Исследователь океана';
+  const profileTitle = document.querySelector('.profile__title');
+  const profileParagraph = document.querySelector('.profile__paragraph');
+  const textTitle = profileTitle.textContent;
+  const textParagraph = profileParagraph.textContent;
+    popupItemName.value = textTitle;
+    popupItemProfession.value = textParagraph;
 
   if (evt.target.classList.contains('profile__edit-button')) {
     popupСlose.classList.add('popup_opened');
-  };
-});
+  }
+})
+
 
 //Функция замены текста popup
 function addProfile(popupItemNameValue, popupItemProfessionValue) {
@@ -66,7 +72,8 @@ function addProfile(popupItemNameValue, popupItemProfessionValue) {
   profileTitleRemove.remove();
   profileParagraphRemove.remove();
   profileEditButtonRemove.remove();
-};
+}
+
 
 popupHandlerButton.addEventListener('click', function () {
   const popupItemName = document.querySelector('.popup__item-name');
@@ -76,16 +83,18 @@ popupHandlerButton.addEventListener('click', function () {
 
   popupItemName.value = '';
   popupItemProfession.value = '';
-});
+})
+
 
 function showPopupAddButton() {
   popupAddButton.classList.remove('popup-add-button_opened');
-};
+}
 popupAddButtonClose.addEventListener('click', showPopupAddButton);
+
 
 function closePopupAddButton() {
   popupAddButton.classList.add('popup-add-button_opened');
-};
+}
 profileAddButton.addEventListener('click', closePopupAddButton);
 
 
@@ -99,7 +108,7 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
 //Добавление лайка к карточке
   galleryContainerClone.querySelector('.gallery__like-heart').addEventListener('click', function (evt) {
     evt.target.classList.toggle('gallery__like-heart_active');
-  });
+  })
 
 //Удаление карточки новоcозданого елемента
   galleryContainerClone.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
@@ -123,7 +132,8 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
   popupAddButton.classList.remove('popup-add-button_opened');
 
   gallery.prepend(galleryContainerClone);
-};
+}
+
 
 function closePopupHandlerButton() {
   const galleryTitle = document.querySelector('.popup-add-button__item-name');
@@ -135,6 +145,7 @@ function closePopupHandlerButton() {
   galleryImage.value = '';
 }
 popupAddButtonHandlerButton.addEventListener('click', closePopupHandlerButton);
+
 
 //Добавление массива карточек в DOM
 const initialCards = [
@@ -164,39 +175,44 @@ const initialCards = [
   }
   ];
 
+
 initialCards.forEach(function (card) {
   const clonСards = galleryContainerTemplate.cloneNode(true);
 
   clonСards.querySelector('.gallery__title').textContent = card.name;
   clonСards.querySelector('.gallery__image').src = card.link;
+
 //Добавлнение лайка
   clonСards.querySelectorAll('.gallery__like-heart').forEach(galleryLikeHeart => {
     galleryLikeHeart.addEventListener('click', (evt) => {
       evt.target.classList.toggle('gallery__like-heart_active');
-    });
-});
+    })
+})
+
 //Удаление карточки
 clonСards.querySelectorAll('.gallery__trash').forEach(galleryTrash => {
   galleryTrash.addEventListener('click', () => {
     const galleryCard = galleryTrash.closest('.gallery__card');
     galleryCard.remove();
-    });
-});
+    })
+})
+
 //Открытие картинки
 clonСards.querySelectorAll('.gallery__image').forEach(galleryImage => {
   galleryImage.addEventListener('click', () => {
     showPicture.querySelector('.popup-show-picture__title').textContent = card.name;
     showPicture.querySelector('.popup-show-picture__image').src = card.link;
     showPicture.classList.add('popup-show-picture_opened');
-  });
-});
+  })
+})
 
   gallery.append(clonСards)
-});
+})
+
 
 function showPopuPicture() {
   showPicture.classList.remove('popup-show-picture_opened');
-};
+}
   pictureCloseButton.addEventListener('click', showPopuPicture);
 
 
