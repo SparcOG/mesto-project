@@ -22,4 +22,4 @@
 
 * Javascript (modules, classes, promises)
 
-[Перейти к проекту](https://sparcog.github.io/mesto-project/)
+[Посмотреть проект](https://sparcog.github.io/mesto-project/)
