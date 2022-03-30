@@ -1,4 +1,4 @@
-.popup__item-name {
+.popup__field-1 {
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
@@ -14,12 +14,12 @@
   overflow: hidden;
 }
 
-.popup__item-name:nth-child(1) {
+.popup__field-1:nth-child(1) {
   margin: 0;
 }
 
 @media screen and (max-width: 500px) {
-  .popup__item-name  {
+  .popup__field-1  {
     width: 238px;
   }
 }

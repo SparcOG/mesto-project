@@ -35,14 +35,14 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup"><!--popup_opened-->
+    <div class="popup popup-profile">
       <div class="popup__container">
         <form class="popup__form">
           <h2 class="popup__title">Редактировать профиль</h2>
           <div class="popup__elements">
             <fieldset class="popup__input-container">
-              <input type="text" name="name" class="popup__item-name" required>
-              <input type="text" name="profession" class="popup__item-profession" required>
+              <input type="text" name="name" class="popup__field-1" required>
+              <input type="text" name="profession" class="popup__field-2" required>
             </fieldset>
             <button class="popup__handler-button" type="submit">Сохранить</button>
           </div>
@@ -50,26 +50,26 @@
         <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       </div>
     </div>
-    <div class="popup-add-button"><!--popup-add-button_opened-->
-      <div class="popup-add-button__container">
-        <form class="popup-add-button__form">
-          <h2 class="popup-add-button__title">Новое место</h2>
-          <div class="popup-add-button__elements">
-            <fieldset class="popup-add-button__input-container">
-              <input type="text" name="name" class="popup-add-button__item-name" placeholder="Название" required>
-              <input type="text" name="image" class="popup-add-button__item-image" placeholder="Ссылка на картинку" required>
+    <div class="popup popup-cards">
+      <div class="popup__container">
+        <form class="popup__form">
+          <h2 class="popup__title">Новое место</h2>
+          <div class="popup__elements">
+            <fieldset class="popup__input-container">
+              <input type="text" name="name" class="popup__field-1" placeholder="Название" required>
+              <input type="text" name="image" class="popup__field-2" placeholder="Ссылка на картинку" required>
             </fieldset>
-            <button class="popup-add-button__handler-button" type="submit">Создать</button>
+            <button class="popup__handler-button" type="submit">Создать</button>
           </div>
         </form>
-        <button class="popup-add-button__close-button" type="button" aria-label="Закрыть"></button>
+        <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       </div>
     </div>
-    <div class="popup-show-picture">
+    <div class="popup popup-show-picture">
       <div>
-        <div class="popup-show-picture__container">
+        <div class="popup__container">
           <img src="" alt="" class="popup-show-picture__image">
-          <button class="popup-show-picture__close-button" type="button" aria-label="Закрыть"></button>
+          <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         </div>
         <p class="popup-show-picture__title"></p>
       </div>
