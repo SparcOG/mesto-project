@@ -1,13 +1,37 @@
-//Новые переменые
-const cardsPopup = document.querySelector('.popup-cards');
+const popup = document.querySelector('.popup');
+const buttonPopupClose = document.querySelector('.popup__close-button');
+const profilePopupClose = document.querySelector('.popup-profile');
+const cardsPopupClose = document.querySelector('.popup-cards');
+const popupShowPictureClose = document.querySelector('.popup-show-picture');
+
+//Закрытие попапа
+document.body.onclick = function openPopup (evt) {
+    if (evt.target.getAttribute("class") == "popup__close-button") {
+      profilePopupClose.classList.remove('popup_opened');
+      cardsPopupClose.classList.remove('popup_opened');
+      popupShowPictureClose.classList.remove('popup_opened');
+    }
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------
 
 //Открытие и закрытие popup
-const closeButton = document.querySelector('.popup__close-button');
+
 const popupHandlerButton = document.querySelector('.popup__handler-button');
 const profileInfo = document.querySelector('.profile__info');
-const popupСlose = document.querySelector('.popup');
+
 
 //Слушаем клик
 const profile = document.querySelector('.profile__container');
@@ -24,10 +48,7 @@ const gallery = document.querySelector('.gallery');
 const showPicture = document.querySelector('.popup-show-picture');
 
 
-function showPopup() {
-  popupСlose.classList.remove('popup_opened');
-}
-  closeButton.addEventListener('click', showPopup);
+
 
 
   profile.addEventListener('click', function (evt) {
@@ -40,7 +61,7 @@ function showPopup() {
     popupItemName.value = textTitle;
     popupItemProfession.value = textParagraph;
 
-    popupСlose.classList.add('popup_opened');
+    popup.classList.add('popup_opened');
 
 })
 
@@ -68,7 +89,7 @@ function addProfile(popupItemNameValue, popupItemProfessionValue) {
   profileContainer.append(profileTitle, profileParagraph);
   profileContainer.append(profileEditButton);
 
-  popupСlose.classList.remove('popup_opened');
+  popup.classList.remove('popup_opened');
 
   profileTitleRemove.remove();
   profileParagraphRemove.remove();
@@ -88,7 +109,7 @@ popupHandlerButton.addEventListener('click', function () {
 
 
 function showPopupAddButton() {
-  cardsPopup.classList.add('popup_opened');
+  popupClose.classList.add('popup_opened');
 }
 profileAddButton.addEventListener('click', showPopupAddButton);
 
@@ -122,7 +143,7 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
       galleryImage2.addEventListener('click', () => {
         showPicture.querySelector('.popup-show-picture__title').textContent = galleryTitle;
         showPicture.querySelector('.popup-show-picture__image').src = galleryImage;
-        showPicture.classList.add('popup-show-picture_opened');
+        showPicture.classList.add('popup_opened');
       })
     })
   })
@@ -199,7 +220,7 @@ clonСards.querySelectorAll('.gallery__image').forEach(galleryImage => {
   galleryImage.addEventListener('click', () => {
     showPicture.querySelector('.popup-show-picture__title').textContent = card.name;
     showPicture.querySelector('.popup-show-picture__image').src = card.link;
-    showPicture.classList.add('popup-show-picture_opened');
+    showPicture.classList.add('popup_opened');
   })
 })
 
