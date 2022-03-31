@@ -1,21 +1,35 @@
+const content = document.getElementsByClassName('content');
+
 const popup = document.querySelector('.popup');
-const buttonPopupClose = document.querySelector('.popup__close-button');
+const buttonPopupClose = document.getElementsByClassName('popup__close-button');
 const profilePopupClose = document.querySelector('.popup-profile');
 const cardsPopupClose = document.querySelector('.popup-cards');
 const popupShowPictureClose = document.querySelector('.popup-show-picture');
 
-//Закрытие попапа
-document.body.onclick = function openPopup (evt) {
-    if (evt.target.getAttribute("class") == "popup__close-button") {
+
+//закрытие попапов
+Array.from(buttonPopupClose).forEach(element => {
+  element.addEventListener('click', () => {
       profilePopupClose.classList.remove('popup_opened');
       cardsPopupClose.classList.remove('popup_opened');
       popupShowPictureClose.classList.remove('popup_opened');
+  });
+});
+
+//открытие попапов
+Array.from(content).forEach(element => {
+  element.addEventListener('click', (evt) => {
+    if (evt.target.getAttribute("class") == "profile__edit-button") {
+      profilePopupClose.classList.add('popup_opened');
     }
-}
-
-
-
-
+    if (evt.target.getAttribute("class") == "profile__add-button") {
+      profilePopupClose.classList.add('popup_opened');
+    }
+    if (evt.target.getAttribute("class") == "gallery__image") {
+      popupShowPictureClose.classList.add('popup_opened');
+    }
+  });
+});
 
 
 
@@ -34,7 +48,7 @@ const profileInfo = document.querySelector('.profile__info');
 
 
 //Слушаем клик
-const profile = document.querySelector('.profile__container');
+const profile2 = document.querySelector('.profile__container');
 
 //Открытие и закрытие popup-add-button
 
@@ -51,7 +65,7 @@ const showPicture = document.querySelector('.popup-show-picture');
 
 
 
-  profile.addEventListener('click', function (evt) {
+  profile2.addEventListener('click', function (evt) {
   const popupItemName = document.querySelector('.popup__field-1');
   const popupItemProfession = document.querySelector('.popup__field-2');
   const profileTitle = document.querySelector('.profile__title');
@@ -61,7 +75,7 @@ const showPicture = document.querySelector('.popup-show-picture');
     popupItemName.value = textTitle;
     popupItemProfession.value = textParagraph;
 
-    popup.classList.add('popup_opened');
+//    popup.classList.add('popup_opened');
 
 })
 
@@ -108,13 +122,6 @@ popupHandlerButton.addEventListener('click', function () {
 })
 
 
-function showPopupAddButton() {
-  popupClose.classList.add('popup_opened');
-}
-profileAddButton.addEventListener('click', showPopupAddButton);
-
-
-
 
 
 //Добавление карточки
@@ -143,7 +150,6 @@ function addingСardToMarkup(galleryTitle, galleryImage) {
       galleryImage2.addEventListener('click', () => {
         showPicture.querySelector('.popup-show-picture__title').textContent = galleryTitle;
         showPicture.querySelector('.popup-show-picture__image').src = galleryImage;
-        showPicture.classList.add('popup_opened');
       })
     })
   })
@@ -220,7 +226,6 @@ clonСards.querySelectorAll('.gallery__image').forEach(galleryImage => {
   galleryImage.addEventListener('click', () => {
     showPicture.querySelector('.popup-show-picture__title').textContent = card.name;
     showPicture.querySelector('.popup-show-picture__image').src = card.link;
-    showPicture.classList.add('popup_opened');
   })
 })
 
