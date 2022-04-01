@@ -6,15 +6,32 @@ const buttonPopupClose = document.getElementsByClassName('popup__close-button');
 const profilePopupClose = document.querySelector('.popup-profile');
 const cardsPopupClose = document.querySelector('.popup-cards');
 const popupShowPictureClose = document.querySelector('.popup-show-picture');
+
+
+/* const nameInputcasc = document.querySelector('.popup__field-1');
+const jobInputascas = document.querySelector('.popup__field-2');
+const image777 = galleryTitleCreate.textContent;
+const title777 = profileParagraph.textContent;
+nameInputcasc.value = image777; */
+
+
+
 const nameInput = document.querySelector('.popup__field-1');
 const jobInput = document.querySelector('.popup__field-2');
 
 const profileTitle = document.querySelector('.profile__title');
 const profileParagraph = document.querySelector('.profile__paragraph');
-const textTitle = profileTitle.textContent;
-const textParagraph = profileParagraph.textContent;
-  nameInput.value = textTitle;
-  jobInput.value = textParagraph;
+const textProfileTitle = profileTitle.textContent;
+const textProfileParagraph = profileParagraph.textContent;
+
+nameInput.value = textProfileTitle;
+jobInput.value = textProfileParagraph;
+
+
+
+const gallerydrverimage = document.querySelector('.gallery__image');
+
+
 
 const gallery = document.querySelector('.gallery');
 const galleryContainerTemplate = document.querySelector('.gallery__container-template').content;
@@ -46,7 +63,7 @@ Array.from(content).forEach(element => {
 });
 
 //Отправка данных редактирования профиля
-function formSubmitHandler (evt) {
+function profileFormSubmitHandler (evt) {
   evt.preventDefault();
 
 profileTitle.textContent = nameInput.value;
@@ -54,9 +71,21 @@ profileParagraph.textContent = jobInput.value;
 
 profilePopupClose.classList.remove('popup_opened');
 }
+for (let i = 0 ; i < formElement.length; i++) {
+  formElement[i].addEventListener('submit', profileFormSubmitHandler) ;
+}
+
+//Отправка данных добавления карточки
+function cardFormSubmitHandler (evt) {
+  evt.preventDefault();
+
+  galleryTitleCreate.textContent = galleryTitleCreate.value;
+
+cardsPopupClose.classList.remove('popup_opened');
+}
 
 for (let i = 0 ; i < formElement.length; i++) {
-  formElement[i].addEventListener('submit', formSubmitHandler) ;
+  formElement[i].addEventListener('submit', cardFormSubmitHandler) ;
 }
 
 //Вставка карточек в дом
@@ -119,31 +148,46 @@ initialCards.forEach(function (card) {
   gallery.append(clonСardsInDom)
 })
 
-  //Добавление новых карточек
-function createCard () {
-  const galleryСardСreate = document.createElement('div');
-  galleryСardСreate.classList.add('gallery__card');
+//Функция создания карточек
+function createCard (galleryImage, galleryTitle) {
+
+}
+
+const galleryСardСreate = document.createElement('div');
+galleryСardСreate.classList.add('gallery__card');
 
 const buttonCreate = document.createElement('button');
-  buttonCreate.classList.add('gallery__trash');
+buttonCreate.classList.add('gallery__trash');
 
 const galleryImageCreate = document.createElement('img');
-  galleryImageCreate.classList.add('gallery__image');
+galleryImageCreate.classList.add('gallery__image');
+/* galleryImageCreate.src = galleryImage; */
 
 const galleryBackgroundCreate = document.createElement('div');
-  galleryBackgroundCreate.classList.add('gallery__background');
+galleryBackgroundCreate.classList.add('gallery__background');
 
 const galleryTitleCreate = document.createElement('h2');
-  galleryTitleCreate.classList.add('gallery__title');
-  galleryTitleCreate.textContent = 'Пример';
+galleryTitleCreate.classList.add('gallery__title');
+/* galleryTitleCreate.textContent = galleryTitle; */
 
 const galleryLikeCreate = document.createElement('button');
-  galleryLikeCreate.classList.add('gallery__like-heart');
+galleryLikeCreate.classList.add('gallery__like-heart');
 
 galleryBackgroundCreate.prepend(galleryTitleCreate, galleryLikeCreate);
 galleryСardСreate.prepend(buttonCreate, galleryImageCreate, galleryBackgroundCreate);
 gallery.prepend(galleryСardСreate);
-}
+
+//Функция добавления созданой карточки через форму
+
+
+/* const galleryImage = document.querySelector('.gallery__image');
+const galleryTitle = document.querySelector('.gallery__title'); */
+/* const textGalleryImage = galleryImage.src;
+const textGalleryTitle = galleryTitle.textContent;
+ */
+
+/* galleryImage.src = textGalleryImage;
+textGalleryTitle.textContent = textGalleryImage; */
 
 
 
