@@ -74,11 +74,11 @@ block popup*/
 
 /*
 
-block popup-show-picture*/
-@import url(../blocks/popup-show-picture/popup-show-picture.css);
+block popup-picture*/
+@import url(../blocks/popup-picture/popup-picture.css);
 /*elements*/
-@import url(../blocks/popup-show-picture/__image/popup-show-picture__image.css);
-@import url(../blocks/popup-show-picture/__title/popup-show-picture__title.css);
+@import url(../blocks/popup-picture/__image/popup-picture__image.css);
+@import url(../blocks/popup-picture/__title/popup-picture__title.css);
 /*modifiers*/
-@import url(../blocks/popup-show-picture/_opened/popup-show-picture_opened.css);
+@import url(../blocks/popup-picture/_opened/popup-picture_opened.css);
 

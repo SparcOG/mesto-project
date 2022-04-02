@@ -5,7 +5,7 @@ const popup = document.querySelector('.popup');
 const buttonPopupClose = document.getElementsByClassName('popup__close-button');
 const profilePopupClose = document.querySelector('.popup-profile');
 const cardsPopupClose = document.querySelector('.popup-cards');
-const popupShowPictureClose = document.querySelector('.popup-show-picture');
+const popupPictureClose = document.querySelector('.popup-picture');
 
 const titleInput = document.querySelector('[name="title"]');
 const imageInput = document.querySelector('[name="image"]');
@@ -27,7 +27,7 @@ Array.from(buttonPopupClose).forEach(element => {
   element.addEventListener('click', () => {
     profilePopupClose.classList.remove('popup_opened');
     cardsPopupClose.classList.remove('popup_opened');
-    popupShowPictureClose.classList.remove('popup_opened');
+    popupPictureClose.classList.remove('popup_opened');
   });
 });
 
@@ -41,7 +41,7 @@ Array.from(content).forEach(element => {
       cardsPopupClose.classList.add('popup_opened');
     }
     if (evt.target.getAttribute("class") == "gallery__image") {
-      popupShowPictureClose.classList.add('popup_opened');
+      popupPictureClose.classList.add('popup_opened');
     }
   });
 });
@@ -132,8 +132,8 @@ function createCard (galleryImage, galleryTitle) {
 
 //Открытие карточек
   galleryImageCreate.addEventListener('click', function () {
-    document.querySelector('.popup-show-picture__title').textContent = galleryTitle;
-    document.querySelector('.popup-show-picture__image').src = galleryImage;
+    document.querySelector('.popup-picture__title').textContent = galleryTitle;
+    document.querySelector('.popup-picture__image').src = galleryImage;
   });
 
 //Лайк карточкам
