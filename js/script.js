@@ -7,16 +7,8 @@ const profilePopupClose = document.querySelector('.popup-profile');
 const cardsPopupClose = document.querySelector('.popup-cards');
 const popupShowPictureClose = document.querySelector('.popup-show-picture');
 
-
-/* const nameInputcasc = document.querySelector('.popup__field-1');
-const jobInputascas = document.querySelector('.popup__field-2');
-const image777 = galleryTitleCreate.textContent;
-const title777 = profileParagraph.textContent;
-nameInputcasc.value = image777; */
-
 const titleInput = document.querySelector('[name="title"]');
 const imageInput = document.querySelector('[name="image"]');
-
 const nameInput = document.querySelector('[name="name"]');
 const jobInput = document.querySelector('[name="profession"]');
 
@@ -24,20 +16,11 @@ const profileTitle = document.querySelector('.profile__title');
 const profileParagraph = document.querySelector('.profile__paragraph');
 const textProfileTitle = profileTitle.textContent;
 const textProfileParagraph = profileParagraph.textContent;
-
 nameInput.value = textProfileTitle;
 jobInput.value = textProfileParagraph;
 
-
-
 const gallerydrverimage = document.querySelector('.gallery__image');
-
-
-
 const gallery = document.querySelector('.gallery');
-const galleryContainerTemplate = document.querySelector('.gallery__container-template').content;
-
-
 
 //закрытие попапов
 Array.from(buttonPopupClose).forEach(element => {
@@ -63,7 +46,7 @@ Array.from(content).forEach(element => {
   });
 });
 
-//Отправка данных редактирования профиля и добавление карточек
+//Отправка данных редактирования профиля и добавления карточек
 function profileFormSubmitHandler (evt) {
   evt.preventDefault();
 
@@ -78,11 +61,10 @@ profilePopupClose.classList.remove('popup_opened');
 
 createCard (imageInput.src, titleInput.value)
 }
+
 for (let i = 0 ; i < formElement.length; i++) {
   formElement[i].addEventListener('submit', profileFormSubmitHandler) ;
 }
-
-
 
 //Вставка карточек в дом
 const initialCards = [
@@ -113,41 +95,15 @@ const initialCards = [
   ];
 
 //Добавление карточек в дом
-initialCards.forEach(function forrksc (card, galleryImageRemove) {
-  const clonСardsInDom = galleryContainerTemplate.cloneNode(true);
-  const galleryTrashRemove = clonСardsInDom.querySelector('.gallery__trash');
-  const galleryImageRemove = clonСardsInDom.querySelector('.gallery__image');
-  const galleryLike = clonСardsInDom.querySelector('.gallery__like-heart');
-
-
-  clonСardsInDom.querySelector('.gallery__title').textContent = card.name;
-  clonСardsInDom.querySelector('.gallery__image').src = card.link;
-  clonСardsInDom.querySelector('.gallery__image').alt = card.name;
-
-//Открытие карточек
-galleryImageRemove.addEventListener('click', function sdsdca () {
-  document.querySelector('.popup-show-picture__title').textContent = card.name;
-  document.querySelector('.popup-show-picture__image').src = card.link;
-});
-
-//Удаление карточек
-galleryTrashRemove.addEventListener('click', function rthgrt (dcsdcsd) {
-  const galleryCard = galleryTrashRemove.closest('.gallery__card');
-  galleryCard.remove();
-});
-
-//Лайк карточкам
-galleryLike.addEventListener('click', function (evt) {
-  evt.target.classList.toggle('gallery__like-heart_active');
-});
-
-  gallery.append(clonСardsInDom)
+initialCards.forEach(function (card) {
+  const galleryTitle = card.name;
+  const galleryImage = card.link;
 
   createCard (galleryImage, galleryTitle)
 })
 
-//Функция создания карточек
-function createCard (galleryImage, galleryTitle, galleryImageRemove) {
+//Созданиe карточек
+function createCard (galleryImage, galleryTitle) {
   const galleryСardСreate = document.createElement('div');
   galleryСardСreate.classList.add('gallery__card');
 
@@ -168,12 +124,28 @@ function createCard (galleryImage, galleryTitle, galleryImageRemove) {
   const galleryLikeCreate = document.createElement('button');
   galleryLikeCreate.classList.add('gallery__like-heart');
 
+//Удаление карточек
+  buttonCreate.addEventListener('click', function  () {
+  const galleryCard = galleryСardСreate.closest('.gallery__card');
+  galleryCard.remove();
+  });
+
+//Открытие карточек
+  galleryImageCreate.addEventListener('click', function () {
+    document.querySelector('.popup-show-picture__title').textContent = galleryTitle;
+    document.querySelector('.popup-show-picture__image').src = galleryImage;
+  });
+
+//Лайк карточкам
+  galleryLikeCreate.addEventListener('click', function (evt) {
+  evt.target.classList.toggle('gallery__like-heart_active');
+  });
+
   galleryBackgroundCreate.prepend(galleryTitleCreate, galleryLikeCreate);
   galleryСardСreate.prepend(buttonCreate, galleryImageCreate, galleryBackgroundCreate);
   gallery.prepend(galleryСardСreate);
 }
 
-forrksc (card, galleryImageRemove);
 
 
 
