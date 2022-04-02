@@ -14,10 +14,11 @@ const image777 = galleryTitleCreate.textContent;
 const title777 = profileParagraph.textContent;
 nameInputcasc.value = image777; */
 
+const titleInput = document.querySelector('[name="title"]');
+const imageInput = document.querySelector('[name="image"]');
 
-
-const nameInput = document.querySelector('.popup__field-1');
-const jobInput = document.querySelector('.popup__field-2');
+const nameInput = document.querySelector('[name="name"]');
+const jobInput = document.querySelector('[name="profession"]');
 
 const profileTitle = document.querySelector('.profile__title');
 const profileParagraph = document.querySelector('.profile__paragraph');
@@ -62,31 +63,26 @@ Array.from(content).forEach(element => {
   });
 });
 
-//Отправка данных редактирования профиля
+//Отправка данных редактирования профиля и добавление карточек
 function profileFormSubmitHandler (evt) {
   evt.preventDefault();
 
 profileTitle.textContent = nameInput.value;
 profileParagraph.textContent = jobInput.value;
 
+titleInput.value = titleInput.value;
+imageInput.src = imageInput.value;
+
+cardsPopupClose.classList.remove('popup_opened');
 profilePopupClose.classList.remove('popup_opened');
+
+createCard (imageInput.src, titleInput.value)
 }
 for (let i = 0 ; i < formElement.length; i++) {
   formElement[i].addEventListener('submit', profileFormSubmitHandler) ;
 }
 
-//Отправка данных добавления карточки
-function cardFormSubmitHandler (evt) {
-  evt.preventDefault();
 
-  galleryTitleCreate.textContent = galleryTitleCreate.value;
-
-cardsPopupClose.classList.remove('popup_opened');
-}
-
-for (let i = 0 ; i < formElement.length; i++) {
-  formElement[i].addEventListener('submit', cardFormSubmitHandler) ;
-}
 
 //Вставка карточек в дом
 const initialCards = [
@@ -117,7 +113,7 @@ const initialCards = [
   ];
 
 //Добавление карточек в дом
-initialCards.forEach(function (card) {
+initialCards.forEach(function forrksc (card, galleryImageRemove) {
   const clonСardsInDom = galleryContainerTemplate.cloneNode(true);
   const galleryTrashRemove = clonСardsInDom.querySelector('.gallery__trash');
   const galleryImageRemove = clonСardsInDom.querySelector('.gallery__image');
@@ -129,65 +125,55 @@ initialCards.forEach(function (card) {
   clonСardsInDom.querySelector('.gallery__image').alt = card.name;
 
 //Открытие карточек
-  galleryImageRemove.addEventListener('click', function () {
-    document.querySelector('.popup-show-picture__title').textContent = card.name;
-    document.querySelector('.popup-show-picture__image').src = card.link;
-  });
+galleryImageRemove.addEventListener('click', function sdsdca () {
+  document.querySelector('.popup-show-picture__title').textContent = card.name;
+  document.querySelector('.popup-show-picture__image').src = card.link;
+});
 
 //Удаление карточек
-  galleryTrashRemove.addEventListener('click', function () {
-    const galleryCard = galleryTrashRemove.closest('.gallery__card');
-    galleryCard.remove();
-  });
+galleryTrashRemove.addEventListener('click', function rthgrt (dcsdcsd) {
+  const galleryCard = galleryTrashRemove.closest('.gallery__card');
+  galleryCard.remove();
+});
 
 //Лайк карточкам
-  galleryLike.addEventListener('click', function (evt) { // event доступен как параметр
-    evt.target.classList.toggle('gallery__like-heart_active');
-  });
+galleryLike.addEventListener('click', function (evt) {
+  evt.target.classList.toggle('gallery__like-heart_active');
+});
 
   gallery.append(clonСardsInDom)
+
+  createCard (galleryImage, galleryTitle)
 })
 
 //Функция создания карточек
-function createCard (galleryImage, galleryTitle) {
+function createCard (galleryImage, galleryTitle, galleryImageRemove) {
+  const galleryСardСreate = document.createElement('div');
+  galleryСardСreate.classList.add('gallery__card');
 
+  const buttonCreate = document.createElement('button');
+  buttonCreate.classList.add('gallery__trash');
+
+  const galleryImageCreate = document.createElement('img');
+  galleryImageCreate.classList.add('gallery__image');
+  galleryImageCreate.src = galleryImage;
+
+  const galleryBackgroundCreate = document.createElement('div');
+  galleryBackgroundCreate.classList.add('gallery__background');
+
+  const galleryTitleCreate = document.createElement('h2');
+  galleryTitleCreate.classList.add('gallery__title');
+  galleryTitleCreate.textContent = galleryTitle;
+
+  const galleryLikeCreate = document.createElement('button');
+  galleryLikeCreate.classList.add('gallery__like-heart');
+
+  galleryBackgroundCreate.prepend(galleryTitleCreate, galleryLikeCreate);
+  galleryСardСreate.prepend(buttonCreate, galleryImageCreate, galleryBackgroundCreate);
+  gallery.prepend(galleryСardСreate);
 }
 
-const galleryСardСreate = document.createElement('div');
-galleryСardСreate.classList.add('gallery__card');
-
-const buttonCreate = document.createElement('button');
-buttonCreate.classList.add('gallery__trash');
-
-const galleryImageCreate = document.createElement('img');
-galleryImageCreate.classList.add('gallery__image');
-/* galleryImageCreate.src = galleryImage; */
-
-const galleryBackgroundCreate = document.createElement('div');
-galleryBackgroundCreate.classList.add('gallery__background');
-
-const galleryTitleCreate = document.createElement('h2');
-galleryTitleCreate.classList.add('gallery__title');
-/* galleryTitleCreate.textContent = galleryTitle; */
-
-const galleryLikeCreate = document.createElement('button');
-galleryLikeCreate.classList.add('gallery__like-heart');
-
-galleryBackgroundCreate.prepend(galleryTitleCreate, galleryLikeCreate);
-galleryСardСreate.prepend(buttonCreate, galleryImageCreate, galleryBackgroundCreate);
-gallery.prepend(galleryСardСreate);
-
-//Функция добавления созданой карточки через форму
-
-
-/* const galleryImage = document.querySelector('.gallery__image');
-const galleryTitle = document.querySelector('.gallery__title'); */
-/* const textGalleryImage = galleryImage.src;
-const textGalleryTitle = galleryTitle.textContent;
- */
-
-/* galleryImage.src = textGalleryImage;
-textGalleryTitle.textContent = textGalleryImage; */
+forrksc (card, galleryImageRemove);
 
 
 
