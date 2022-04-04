@@ -1,8 +1,8 @@
 const content = document.getElementsByClassName('content');
 const formElement = document.getElementsByTagName('form');
 
-const popup = document.querySelector('.popup');
-const buttonPopupClose = document.getElementsByClassName('popup__close-button');
+const popup = document.querySelectorAll('.popup');
+const buttonPopupClose = document.querySelectorAll('.popup__close-button');
 const profilePopupClose = document.querySelector('.popup-profile');
 const cardsPopupClose = document.querySelector('.popup-cards');
 const popupPictureClose = document.querySelector('.popup-picture');
@@ -22,14 +22,89 @@ jobInput.value = textProfileParagraph;
 const gallerydrverimage = document.querySelector('.gallery__image');
 const gallery = document.querySelector('.gallery');
 
+
+
+
+
+function closePopup (sdfvdsfv) {
+  sdfvdsfv.classList.remove('popup')
+}
+
+for (let i = 0 ; i < popup.length; i++) {
+const sdfvdsfv = popup[i];
+closePopup (sdfvdsfv);
+}
+
+
+for (let i = 0 ; i < buttonPopupClose.length; i++) {
+  buttonPopupClose[i].addEventListener('click', closePopup);
+}
+
+
+
+
+
+
+
+/* for (let i = 0 ; i < buttonPopupClose.length; i++) {
+  buttonPopupClose[i].addEventListener('click', closePopup);
+}
+
+function closePopup () {
+for (let i = 0 ; i < popup.length; i++) {
+  popup[i].classList.remove('popup_opened')
+}
+} */
+
+/* for (let i = 0 ; i < popup.length; i++) {
+  const popup2 = popup[i];
+
+  console.log(popup[i])
+  closePopup (popup2);
+}
+ */
+
+/*  function closePopup () {
+  popup.classList.remove('popup_opened');
+}
+buttonPopupClose.addEventListener('click', closePopup); */
+
+
+
+/* for (let i = 0 ; i < buttonPopupClose.length; i++) {
+  console.log(buttonPopupClose[i])
+  buttonPopupClose[i].addEventListener('click', closePopup);
+} */
+/*
+buttonPopupClose[0].addEventListener('click', closePopup) ;
+
+for (let i = 0 ; i < popup.length; i++) {
+  const popup2 = popup[i];
+  closePopup (popup2)
+} */
+
+
+/* for (let i = 0 ; i < buttonPopupClose.length; i++) {
+  console.log(buttonPopupClose[i])
+  buttonPopupClose[i].addEventListener('click', closePopup) ;
+} */
+
+
+/* for (let i = 0 ; i < popup.length; i++) {
+  console.log(buttonPopupClose[i])
+  popup[i].addEventListener('click', closePopup) ;
+  closePopup ()
+} */
+
+
 //закрытие попапов
-Array.from(buttonPopupClose).forEach(element => {
+/* Array.from(buttonPopupClose).forEach(element => {
   element.addEventListener('click', () => {
     profilePopupClose.classList.remove('popup_opened');
     cardsPopupClose.classList.remove('popup_opened');
     popupPictureClose.classList.remove('popup_opened');
   });
-});
+}); */
 
 //открытие попапов
 Array.from(content).forEach(element => {
@@ -98,7 +173,6 @@ const initialCards = [
 initialCards.forEach(function (card) {
   const galleryTitle = card.name;
   const galleryImage = card.link;
-
   createCard (galleryImage, galleryTitle)
 })
 
